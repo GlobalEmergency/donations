@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MainController!{% endblock %}
+
+{% block body %}
+    <div id="map"></div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        window.onload = function() {
+            {% for place in places %}
+            {% if place.type == 'warehouse' %}
+                {% set icon = 'window.markerWarehouse' %}
+            {% elseif place.type == 'receipt' %}
+                {% set icon = 'window.markerStore' %}
+            {% else %}
+                {% set icon = 'window.markerStore' %}
+            {% endif %}
+                window.L.marker([{{ place.longitude }}, {{ place.latitude }}],{icon: {{ icon }}}).addTo(window.map);
+            {% endfor %}
+            // window.L.marker([40.4343400771438, -3.5980212251210824],{icon:window.markerStore}).addTo(window.map);
+        };
+    </script>
+{%  endblock javascripts %}
