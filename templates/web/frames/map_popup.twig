@@ -1,0 +1,9 @@
+{% apply spaceless %}
+{#    {% autoescape 'js' %}#}
+<h3>{{ place.type }} - {{ place.name }}</h3>
+<p>{{ place.address }}</p>
+{% autoescape false %}{{ place.description }}{% endautoescape %}
+<p>
+    <b>Contacto:</b></br>{{ place.contactName }}</br>{{ place.contactPhone }}</br>{{ place.contactEmail }}</p>
+{#    {% endautoescape %}#}
+{% endapply  %}

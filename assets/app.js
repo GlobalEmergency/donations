@@ -1,5 +1,5 @@
 /*
- * Welcome to your app's main JavaScript file!
+ * Welcome to your app's web JavaScript file!
  *
  * We recommend including the built version of this JavaScript file
  * (and its CSS file) in your base layout (base.html.twig).
@@ -21,11 +21,11 @@ import {map} from "./maps";
 //     // navigator.geolocation.getCurrentPosition(getPosition);
 // }
 global.markerWarehouse = L.icon({
-    iconUrl:'/icons/warehouse.png',
+    iconUrl:'/build/images/icons/warehouse.png',
     iconSize: [55, 45]
 });
 global.markerStore = L.icon({
-    iconUrl:'/icons/store.png',
+    iconUrl:'/build/images/icons/store.png',
     iconSize: [55, 45]
 });
 global.map = map;

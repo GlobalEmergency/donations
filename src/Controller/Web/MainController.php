@@ -14,12 +14,12 @@ class MainController extends AbstractController
 {
 
     /**
-     * @Route("/", name="main")
+     * @Route("/", name="web")
      * @return Response
      */
     public function index(PlaceRepository $placeRepository): Response
     {
-        return $this->render('main/index.html.twig', [
+        return $this->render('web/index.html.twig', [
             'places' => $placeRepository->findAll()
         ]);
     }

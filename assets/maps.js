@@ -29,11 +29,18 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     attribution: 'Datos del mapa de &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>, ' + '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' + 'Imágenes © <a href="https://www.mapbox.com/">Mapbox</a>',
     id: 'mapbox/streets-v11'
 }).addTo(map);
+
+global.marker = L.icon({
+    iconUrl:'/build/images/marker-icon.2b3e1faf.png',
+    iconSize: [25, 41]
+});
+
+
 function onLocationFound(e) {
-    var radius = e.accuracy / 2;
-    L.marker(e.latlng).addTo(map)
-        .bindPopup("You are within " + radius + " meters from this point").openPopup();
-    L.circle(e.latlng, radius).addTo(map);
+    // var radius = e.accuracy / 2;
+    L.marker(e.latlng,{icon:marker}).addTo(map)
+        // .bindPopup("You are within " + radius + " meters from this point").openPopup();
+    // L.circle(e.latlng, radius).addTo(map);
 }
 map.on('locationfound', onLocationFound);
 

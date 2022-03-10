@@ -1,9 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MainController!{% endblock %}
+{% block title %}Donations Manager!{% endblock %}
 
 {% block body %}
+    <h1>Donations map</h1>
+    <h3>Mapa de donaciones de material por el conflicto Ucraniano.</h3>
     <div id="map"></div>
+    <p>Estamos en desarrollo, para agregar un nuevo sitio o colaborar con nosotros por favor escríbenos a <a href="mailto:info@globalemergency.online?subject=Donations">info@globalemergency.online</a> </p>
 {% endblock %}
 
 {% block javascripts %}
@@ -18,7 +21,9 @@
             {% else %}
                 {% set icon = 'window.markerStore' %}
             {% endif %}
-                window.L.marker([{{ place.longitude }}, {{ place.latitude }}],{icon: {{ icon }}}).addTo(window.map);
+                window.L.marker([{{ place.longitude }}, {{ place.latitude }}],{icon: {{ icon }}})
+                    .bindPopup("{% include "web/frames/map_popup.twig" with {place:place} %}")
+                    .addTo(window.map);
             {% endfor %}
             // window.L.marker([40.4343400771438, -3.5980212251210824],{icon:window.markerStore}).addTo(window.map);
         };
