@@ -6,4 +6,6 @@ Easily all donations are grouped by project, for example Ucrania refugees in Pol
 inside this project exists different types of requirements how food, medicines or hygienic products for example,
 and different types of storages, places where anyone can put his donations, place to put the donations globally by organizations, etc.
 
-## Todo
+## Project closed due to has not sense continue showing more information.
+
+## Thanks all collaborators
